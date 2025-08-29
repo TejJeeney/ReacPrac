@@ -48,9 +48,9 @@ function App() {
       <h1>Basic react</h1>
       <h2 id ="countervalue">Counter value: {counter}</h2>
 
-      <button id='addbtn' onClick={inc}>Add value {counter}</button>
+      <button id='addbtn' onClick={() => inc()}>Add value {counter}</button>
       <br/>
-      <button id='removebtn' onClick={dec}>remove value {counter}</button>
+      <button id='removebtn' onClick={() => dec()}>remove value {counter}</button>
       <p id='para'>Here's another counter: {counter}</p>
     </>
   )
