@@ -1,4 +1,4 @@
-import { use, useState } from 'react'
+import { useState } from 'react'
 import { useCallback } from 'react'
 import './App.css'
 import Page from './Page.jsx'
@@ -29,8 +29,9 @@ function App() {
 
   return (
     <>
-    <div className= 'w-full max-w-md mx-auto shadow-md rounded-lg my-8 text-orange-500 bg-gray-700'> Bsic shizzz</div>
-    <div className='flex shadow rounded-lg overflow-hidden mb-4'><Page /></div>
+     <div className= 'w-full max-w-md mx-auto px-4 my-8 rounded shadow-emerald-200 text-orange-500 bg-slate-800'>
+       Basic shizzz
+     </div>
     </>
   )
 }
