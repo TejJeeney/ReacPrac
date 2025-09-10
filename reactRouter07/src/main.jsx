@@ -9,7 +9,7 @@ import About from './components/About/About.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import { Route } from 'react-router'
 import User from './components/User/User.jsx'
-import Github from './components/Github/Github.jsx'
+import Github,{fetchDataFromGithub} from './components/Github/Github.jsx'
 
 // const router = createBrowserRouter([
 
@@ -46,7 +46,7 @@ const router = createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
       <Route path='user/:let_id' element={<User />} /> 
-      <Route path= 'github' element={<Github />} />
+      <Route loader={fetchDataFromGithub} path='github' element={<Github />} />
     </Route>
 
   )

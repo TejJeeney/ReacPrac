@@ -4,13 +4,13 @@ import App from '../../App'
 
 
 function User() {
-    const {let_id} = useParams() 
-  return (
-    <>
-    <div>User: {let_id} </div>
-    <App />
-    </>
-  )
+    const { let_id } = useParams()
+    return (
+        <>
+            <div>User: {let_id} </div>
+            <App />
+        </>
+    )
 }
 
 export default User
