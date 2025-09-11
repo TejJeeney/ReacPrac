@@ -38,7 +38,7 @@ function Contact() {
                                     />
                                 </svg>
                                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    LKG, Dehradun, Uttarakhand, 248001
+                                    Dehradun, Uttarakhand, 248001
                                 </div>
                             </div>
 
@@ -60,7 +60,7 @@ function Contact() {
                                     />
                                 </svg>
                                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    +91 79833-8xxxx
+                                    +91 79xx3-xxxxx
                                 </div>
                             </div>
 
@@ -90,13 +90,13 @@ function Contact() {
                         <form className="p-6 flex flex-col justify-center">
                             <div className="flex flex-col">
                                 <label for="name" className="hidden">
-                                    Full Name
+                                    Your Name
                                 </label>
                                 <input
                                     type="name"
                                     name="name"
                                     id="name"
-                                    placeholder="Full Name"
+                                    placeholder="Your Name"
                                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
                                 />
                             </div>
@@ -122,7 +122,7 @@ function Contact() {
                                     type="tel"
                                     name="tel"
                                     id="tel"
-                                    placeholder="Telephone Number"
+                                    placeholder="Your Number"
                                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
                                 />
                             </div>
