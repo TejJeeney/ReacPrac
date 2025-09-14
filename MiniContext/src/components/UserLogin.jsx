@@ -24,14 +24,16 @@ function UserLogin() {
                     type='text'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    style= {{fontFamily: "Lucida Handwriting"}}
+                    // style= {{fontFamily: "Lucida Handwriting"}}
                     placeholder='Enter username' />
+                {' '}
                 <input
                     type='password'
                     value={password}
                     id="password"
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter Password" />
+                {' '}
                 <button onClick={UserSubmit}>Login</button>
 
                 <input
@@ -41,7 +43,7 @@ function UserLogin() {
                         const x = document.getElementById("password")
                         if (x.type === "password") {
                             x.type = "text"
-                            x.style.fontFamily = "Lucida Handwriting"
+                            // x.style.fontFamily = "Lucida Handwriting"
                         }
                         else {
                             x.type = "password"
