@@ -9,7 +9,7 @@ function App() {
   return (
     <UserContextProvider>
       <div> This is awesome</div>
-      <UserLogin  />
+      <UserLogin />
       <Profile />
     </UserContextProvider>
   )
