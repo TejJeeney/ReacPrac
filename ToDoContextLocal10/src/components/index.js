@@ -1,5 +1,5 @@
-import TodoForm from "./TodoForm";
-import TodoItem from "./TodoItem";
+import TodoForm from "./Todoform";
+import TodoItem from "./Todoitem";
 
 export { TodoForm, TodoItem };
 
