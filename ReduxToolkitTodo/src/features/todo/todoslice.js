@@ -36,8 +36,7 @@ import {createSlice, nanoid} from '@reduxjs/toolkit'
                 todo.completed = !todo.completed
             }
             else {alert("No changes made in the Selected Todo Item")}
-        }
-    }
+        }, 
  })
 
 
