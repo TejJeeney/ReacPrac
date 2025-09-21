@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleTodo, removeTodo } from '../features/todo/todoslice'
+import { removeTodo } from '../features/todo/todoslice'
 
 function Todos() {
   const todos = useSelector((state) => state.todos)
@@ -10,15 +10,6 @@ function Todos() {
   return (
     <>
       <div>Todos</div>
-      {/* {todos.map((todo) => (
-        <li key={todo.id}>
-          {todo.text}
-          <button
-          onClick ={() => {dispatch(removeTodo(todo.id))}} >
-            X</button>
-        </li>
-      ))} */}
-
       <ul className="list-none">
         {todos.map((todo) => (
           <li
