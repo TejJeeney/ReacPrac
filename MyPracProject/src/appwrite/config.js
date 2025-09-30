@@ -146,8 +146,7 @@ export class Services {
             conf.appwriteBucketId,
             fileId
         );
-    }
-        
+    }      
 
 }
 
