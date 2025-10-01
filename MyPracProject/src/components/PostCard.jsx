@@ -1,5 +1,5 @@
 import React from 'react'
-import appwriteServices from '../appwrite/config' // to import the methods from appwrite config file
+import appwriteService from '../appwrite/config' // to import the methods from appwrite config file
 import { Link } from 'react-router-dom'
 
 
@@ -14,7 +14,7 @@ function PostCard({
         <div className='w-full border border-gray-200 rounded-xl p-4'>
             <div className="justify-center mb-4 rounded-lg ">
                 <img //importing the filePreview method from appwrite config file
-                src={appwriteServices.getFilePreview(featuredImage)} 
+                src={appwriteService.getFilePreview(featuredImage)} 
                 alt={title}
                 className="rounded-xl "
                 ></img>
