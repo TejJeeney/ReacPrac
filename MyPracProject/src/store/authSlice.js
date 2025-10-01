@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState = { // crearting an initial state necessary for a redux slice
     status: false, 
     userData: null
 }
@@ -11,8 +11,8 @@ export const authSlice = createSlice({
     initialState,
     reducers: {
         login: (state, action) => {
-            state.status = true,
-            state.userData = action.payload.userData 
+            state.status = true, // setting the status to true when user logs in
+            state.userData = action.payload.userData // setting the userData to the payload received from the login action
         },
 
         logout: (state) => {
