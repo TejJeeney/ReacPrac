@@ -21,6 +21,7 @@ function LogoutBtn() {
   return (
     <>
       <button
+        onClick={handleLogout}
         title="Add New"
         class="group cursor-pointer outline-none hover:rotate-90 duration-300"
       >

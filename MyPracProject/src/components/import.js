@@ -6,6 +6,8 @@ import LogoutBtn from './header/LogoutBtn.jsx'
 import Button from './Button.jsx'
 import Input from '/Input.jsx'
 import PostCard from './PostCard.jsx'
+import RTE from './RTE.jsx'
+
 
 export default {
     Header,
@@ -15,7 +17,8 @@ export default {
     LogoutBtn,
     Button,
     Input,
-    PostCard
+    PostCard,
+    RTE
 
 }
 
