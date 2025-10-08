@@ -21,12 +21,12 @@ function Login() {
 
         try {
             const session = await authService.login(data)
+            // const session = await authService.createAccount(data)
             if(session) {
                 const userData = await authService.getCurrentUser() // fetching the current user data after login
-                if(userData) {
-                    dispatch(authLogin(userData)) // dispatching the login action with userData as payload
-                    navigate('/') // ye automatically navigate to the home page 
-                }
+                console.log("Login :: userData", userData)
+                if(userData) dispatch(authLogin(userData)); // dispatching the login action with userData as payload
+                navigate('/') // ye automatically navigate to the home page 
             }
 
         } catch (error) {
@@ -52,7 +52,10 @@ function Login() {
                 Sign Up
                 </Link>
             </p>
+
+
             {error && <p className="text-red-600 mt-8 mb-3 text-center">{error}</p>}
+            
             <form onSubmit= {handleSubmit(login)} // handleSubmit will call login function yahn pe. 
             //ye handleSubmit lega input as an feild aur ---"handleSubmit"--- is baked-in function of react-hook-form
             className='mt-8 mb-2'>
@@ -82,7 +85,9 @@ function Login() {
                     })}
                     />
 
-                    <Button>Sign-in</Button>
+                    <Button type="submit" className="w-full mt-6">
+                        Sign-in
+                    </Button>
 
 
 

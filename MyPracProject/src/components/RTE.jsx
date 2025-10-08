@@ -1,7 +1,6 @@
 import React from 'react'
 import { Editor } from '@tinymce/tinymce-react'
 import { Controller } from 'react-hook-form' // imported taki this component can be called/referenced and controlled by the react hook-form.
-import { useState } from 'react'
 
 
 function RTE({
@@ -23,7 +22,7 @@ function RTE({
                 label={label || 'Label'}
                 className={`border border-gray-200 rounded-lg ${className}`}
                 defaultValue={defaultValue}
-                render={(field: { onChange }) => ( //ye field onChange ko destructure kar raha hai taki jab chnage ho use use kar sake.
+                render={({ field: { onChange } }) => ( //ye field onChange ko destructure kar raha hai taki jab chnage ho use use kar sake.
                     <Editor
                         initialState={defaultValue || '<p>This is the initial content of the editor</p>'}
                         init={{
