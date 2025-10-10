@@ -8,10 +8,10 @@ import appwriteService from '../appwrite/config'
 function EditPost() {
     const navigate = useNavigate();
     const [post, setPost] = useState([])
-    const {slug} = useParams();
+    const {slug} = useParams(); //to fetch the slug from the url
 
     useEffect(() => {
-        if(slug){
+        if(slug){ //agar slug present hai tabhi fetch karna hai useffect ke andar
             appwriteService.getPost(slug)
             .then((post)=> {
                 if(post) {
@@ -21,7 +21,7 @@ function EditPost() {
         }
         else {
             console.log("No slug found here")
-            navigate('/')
+            navigate('/') //if no slug => navigate to default home
         }
     }, [slug, navigate])
     
@@ -35,4 +35,4 @@ function EditPost() {
   ) : null
 }
 
-export default EditPost
+export { EditPost }

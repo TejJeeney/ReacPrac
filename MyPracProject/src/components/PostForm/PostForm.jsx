@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 
 function PostForm({ post }) {
     const { register, handleSubmit, control, watch, setValue, getValues } = useForm({
-        defaultValues: {
+        defaultValues: { //default values set karne ke liye
             title: post?.title || '',
             slug: post?.slug || '',
             content: post?.content || '',
@@ -42,7 +42,7 @@ function PostForm({ post }) {
             const file = await appwriteService.uploadFile(data.image[0])
 
             if (file) {
-                const fileId = file.$id
+                const fileId = file.$id // we use "$id" insted of "id" because in appwrite it is aimed as $id 
                 data.featuredImage = fileId
                 const dbPost = await appwriteService.createPost({
                     ...data,
@@ -62,11 +62,10 @@ function PostForm({ post }) {
             return value.trim().toLowerCase().replace(/^[a-zA-Z\d\s]+/g, '-').replace(/\s/g, '-')
 
         }
-
         return ''
     })
 
-    useEffect(() => {
+    useEffect(() => { // to auto generate slug from the given/said title
         const subscription = watch((value, { name }) => {
             if (name === 'title') {
                 setValue('slug', slugTransform(value.title,
@@ -75,7 +74,7 @@ function PostForm({ post }) {
         })
 
         return () => {
-            subscription.unsubscribe()
+            subscription.unsubscribe() //it unsubscribes whrn component is unmounted
         }
 
     }, [watch, slugTransform, setValue])

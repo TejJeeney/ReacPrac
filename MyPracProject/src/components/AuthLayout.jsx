@@ -17,6 +17,8 @@ function Protect({
     console.log("Protect :: authStatus", authStatus)
 
     useEffect(() => {
+        // false && true mai jaega at navigate /login
+        // true && false mai jaega at navigate /home
         if (authentication && authStatus !== authentication) {
             navigate('/login')
         }
