@@ -7,6 +7,15 @@ import Button from './Button.jsx'
 import Input from '/Input.jsx'
 import PostCard from './PostCard.jsx'
 import RTE from './RTE.jsx'
+import Signup from './Signup.jsx'
+import Select from './Select.jsx'
+import Login from './Login.jsx'
+import PostForm from './PostForm/PostForm.jsx'
+
+
+
+
+
 
 
 export default {
@@ -18,7 +27,11 @@ export default {
     Button,
     Input,
     PostCard,
-    RTE
+    RTE,
+    Signup,
+    Select,
+    Login,
+    PostForm
 
 }
 
