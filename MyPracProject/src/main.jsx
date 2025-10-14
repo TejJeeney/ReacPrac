@@ -34,7 +34,15 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: '/signup',
+        path: '/sign-up',
+        element: (
+          <AuthLayout authentication={false}>
+            <Signup />
+          </AuthLayout> //authentication false because signup and login page dono pe user authenticated nahi hota
+        )
+      },
+      {
+        path: '/signup', //ye duplicate hai
         element: (
           <AuthLayout authentication={false}>
             <Signup />

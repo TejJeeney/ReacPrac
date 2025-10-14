@@ -17,8 +17,8 @@ function PostForm({ post }) {
         }
     })
     const navigate = useNavigate()
-    const userData = useSelector((state) => state.user.userData)
-    const authStatus = useSelector((state) => state.auth.status)
+    const userData = useSelector((state) => state.auth.userData)
+    // authStatus not needed here — removed to avoid unused variable warning
 
     const submit = async (data) => {
         if (post) {
@@ -58,12 +58,19 @@ function PostForm({ post }) {
     }
 
     const slugTransform = useCallback((value) => {
-        if (value && typeof value === 'string') {
-            return value.trim().toLowerCase().replace(/^[a-zA-Z\d\s]+/g, '-').replace(/\s/g, '-')
-
-        }
-        return ''
-    })
+        if (!value || typeof value !== 'string') return ''
+        // normalize
+        let s = value.trim().toLowerCase()
+        // replace whitespace with hyphens
+        s = s.replace(/\s+/g, '-')
+        // remove invalid chars (only allow a-z, 0-9, dot, hyphen, underscore)
+        s = s.replace(/[^a-z0-9._-]/g, '')
+        // remove leading non-alphanumeric characters (can't start with special char)
+        s = s.replace(/^[^a-z0-9]+/, '')
+        // cap length at 36
+        if (s.length > 36) s = s.substring(0, 36)
+        return s
+    }, [])
 
     useEffect(() => { // to auto generate slug from the given/said title
         const subscription = watch((value, { name }) => {
@@ -94,7 +101,9 @@ function PostForm({ post }) {
                     className="mb-4"
                     {...register("slug", { required: true })}
                     onInput={(e) => {
-                        setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
+                        setValue("slug",
+                            slugTransform(e.currentTarget.value),
+                            { shouldValidate: true });
                     }}
                 />
                 <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
@@ -104,7 +113,7 @@ function PostForm({ post }) {
                     label="Featured Image :"
                     type="file"
                     className="mb-4"
-                    accept="image/png, image/jpg, image/jpeg, image/gif"
+                    accept="image/png, image/jpg, image/jpeg, image/gif, image/webp, image/svg+xml"
                     {...register("image", { required: !post })}
                 />
                 {post && (
@@ -122,7 +131,7 @@ function PostForm({ post }) {
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+                <Button type="submit" bgColor={post ? "bg-pink-500" : undefined} className="w-full">
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>

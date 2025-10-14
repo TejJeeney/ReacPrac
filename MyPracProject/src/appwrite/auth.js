@@ -20,16 +20,16 @@ export class AuthService {
                 // call another method
                 return this.login({email, password});
             } else {
+                console.log("Account not created due to error");
                return  userAccount;
             }
         } catch (error) {
             throw error;
         }
     }
-
     async login({email, password}) {
         try {
-            return await this.account.createEmailSession(email, password);
+            return await this.account.createEmailPasswordSession(email, password);
         } catch (error) {
             throw error;
         }

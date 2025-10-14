@@ -1,7 +1,7 @@
 import React from 'react'
 import { Editor } from '@tinymce/tinymce-react'
 import { Controller } from 'react-hook-form' // imported taki this component can be called/referenced and controlled by the react hook-form.
-
+import conf from '../conf/conf'
 
 function RTE({
     name,
@@ -24,6 +24,8 @@ function RTE({
                 defaultValue={defaultValue}
                 render={({ field: { onChange } }) => ( //ye field onChange ko destructure kar raha hai taki jab chnage ho use use kar sake.
                     <Editor
+                        apiKey={conf.tinymceApiKey} //yha pe apna api key dena hai from tinymce
+                        {...props} //spreading the props so that user can add their own props while using this component
                         initialState={defaultValue || '<p>This is the initial content of the editor</p>'}
                         init={{
                             height: 500,

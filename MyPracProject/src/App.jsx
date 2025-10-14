@@ -22,7 +22,7 @@ function App() {
       (userData) => { 
         if(userData){
           dispatch(login({userData}))
-          console.log(`User detected: ${userData.$id}`)
+          // console.log(`User detected: ${userData.$id}`)
         }
         else {
           dispatch(logout())
@@ -44,7 +44,7 @@ function App() {
         <main className='min-h h-20 m-3 bg-cyan-200 p-3 align-middle center'>
          TODO: <Outlet />
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   ) : null;
