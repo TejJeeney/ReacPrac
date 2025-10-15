@@ -10,7 +10,8 @@ function PostCard({
 }) {
 
   return (
-    <Link to = {`/post/${$id}`}>
+    <Link to={`/post/${$id}`}>
+      {console.log(`$postId: ${$id}`)}
         <div className='w-full border border-gray-200 rounded-xl p-4'>
       <div className="justify-center mb-4 rounded-lg ">
         {featuredImage ? (
@@ -22,7 +23,7 @@ function PostCard({
           />
         ) : (
           <div className="w-full h-40 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500">
-            No image
+            No Image here as it is paid feature
           </div>
         )}
       </div>

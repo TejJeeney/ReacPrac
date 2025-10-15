@@ -36,7 +36,7 @@ function Login() {
 
 
   return (
-    <div className="w-full flex items-center justify-center"> 
+    <div className="hover:bg-gray-200 w-full flex items-center justify-center"> 
         <div className='w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10 shadow-lg mt-20'> 
             <div className='mb-2 flex justify-center'>
                 <span className='inline-block w-full text-3xl font-bold italic max-w-[100%]'>
@@ -58,7 +58,7 @@ function Login() {
             
             <form onSubmit= {handleSubmit(login)} // handleSubmit will call login function yahn pe. 
             //ye handleSubmit lega input as an feild aur ---"handleSubmit"--- is baked-in function of react-hook-form
-            className='mt-8 mb-2'>
+            className=' mt-8 mb-2'>
                 <div className='sapce-y-5'> 
                     <Input 
                     label= "Email"
@@ -85,7 +85,7 @@ function Login() {
                     })}
                     />
 
-                    <Button type="submit" className="w-full mt-6">
+                    <Button type="submit" className="hover:bg-blue-300 cursor-pointer w-full mt-6">
                         Sign-in
                     </Button>
 

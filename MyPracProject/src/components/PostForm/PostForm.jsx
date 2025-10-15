@@ -35,7 +35,7 @@ function PostForm({ post }) {
             })
 
             if (dbPost) {
-                navigate(`/posts/${dbPost.slug}`)
+                navigate(`/post/${dbPost.$id}`)
             }
         }
         else {
@@ -50,7 +50,8 @@ function PostForm({ post }) {
                 })
 
                 if (dbPost) {
-                    navigate(`/posts/${dbPost.$id}`)
+                    navigate(`/post/${dbPost.$id}`)
+                    console.log(`Post created with ID: ${dbPost.$id}`)
                 }
 
             }
@@ -131,7 +132,7 @@ function PostForm({ post }) {
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-pink-500" : undefined} className="w-full">
+                <Button type="submit" bgColor={post ? "bg-pink-500" : undefined} className="hover:bg-pink-600 cursor-pointer w-full">
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>

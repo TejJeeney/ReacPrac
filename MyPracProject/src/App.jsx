@@ -33,16 +33,16 @@ function App() {
     )
     .finally(() => setLoading(false))
 
-  }, [])
+  }, [dispatch])
 
 
   return !loading ? (
-    <div className='w-full h-screen bg-brown-400 flex flex-col justify-center items-center gap-4'>
-      <h1 className="text-4xl font-bold text-pink-600">Welcome to the App</h1>
+    <div className='w-full h-screen bg-brown-400 flex flex-col items-center gap-4'>
+      {/* <h1 className="text-4xl font-bold text-pink-600">Welcome to the App</h1> */}
       <div className='w-full block bg-red-200 p-3 m-4'>
         <Header />
         <main className='min-h h-20 m-3 bg-cyan-200 p-3 align-middle center'>
-         TODO: <Outlet />
+        <Outlet />
         </main>
         {/* <Footer /> */}
       </div>

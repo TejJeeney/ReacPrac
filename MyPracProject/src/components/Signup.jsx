@@ -14,16 +14,17 @@ function Signup() {
     const [error, setError] = useState("")
     const { register, handleSubmit } = useForm()
 
-    const signup = async () => {
+    // `data` comes from react-hook-form's handleSubmit and contains form values
+    const signup = async (data) => {
 
         setError("")
 
         try {
-            const userData = await authService.createAccount(data)
+            const createResult = await authService.createAccount(data)
 
-            if (userData) {
-                const userData = await authService.getCurrentUser()
-                if (userData) dispatch(authSignup(userData));
+            if (createResult) {
+                const fetchedUser = await authService.getCurrentUser()
+                if (fetchedUser) dispatch(authSignup(fetchedUser));
                 navigate("/")
 
             }
@@ -90,7 +91,7 @@ function Signup() {
                             })}
                         />
 
-                        <Button type="submit" className="w-full mt-6">
+                        <Button type="submit" className="hover:bg-blue-300 cursor-pointer w-full mt-6">
                             Create Account
                         </Button>
 

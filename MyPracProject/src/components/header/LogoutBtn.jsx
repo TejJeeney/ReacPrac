@@ -22,7 +22,7 @@ function LogoutBtn() {
     <>
       <button
         onClick={handleLogout}
-        title="Add New"
+        title="Logout"
         class="group cursor-pointer outline-none hover:rotate-90 duration-300"
       >
         <svg width="50px" height="50px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon">
