@@ -15,7 +15,7 @@ const reactElement = {
         href: "https://www.google.com", 
         target: '_blank'
     },
-    children: "Click here to visit to google"
+    children: "Click here to visit to google.com"
 }
 
 
